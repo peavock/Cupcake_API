@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+  <meta http-equiv="X-UA-Compativle" content = "ie=edge">
+
+  <title>{% block title%} CUPCAKES {% endblock %}</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+  <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+
+</head>
+
+<body>
+
+  <main id="content" class="container p-2">
+    <h1>Cupcakes A Plenty!</h1>
+
+    <form id = "add-cupcake-form">
+      <div>
+        <label for = "flavor">Flavor:</label>
+        <input type="text" id = "flavor" name = "flavor" placeholder="Birthday Cake">
+      </div>
+      <div>
+        <label for = "size">Size:</label>
+        <input type="text" id = "size" name = "size" placeholder="medium">
+      </div>
+      <div>
+        <label for = "rating">Rating:</label>
+        <input type="number" id = "rating" min = "0" max = "10" name = "rating" placeholder="5">
+      </div>
+      <div>
+        <label for = "image">Image URL:</label>
+        <input type="text" id = "image" name = "image" placeholder="www.cupcake.com">
+      </div>
+      <button class="btn btn-large btn-info"> Submit New Cupcake</button>
+    </form>
+
+    <div class="container">
+
+        <ul id="cupcakes-list">
+
+        </ul>
+
+  </div>
+ 
+
+
+
+  </main> 
+  <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/cupcakes.js"></script>
+</body>
+
+</html>

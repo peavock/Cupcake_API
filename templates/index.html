@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+  <meta http-equiv="X-UA-Compativle" content = "ie=edge">
+
+
+  <title>{% block title%} CUPCAKES {% endblock %}</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+  <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+
+</head>
+
+<body>
+    <h1>Cupcakes A Plenty!</h1>
+    <main id="content" class="container">
+
+    {% for msg in get_flashed_messages()%}
+        <p>{{msg}}</p>
+    {% endfor %}    
+
+    <div class="container-fluid">
+        <div class="row">
+          {% for cupcake in cupcakes %}
+            <div class="col-sm-6 col-xl-4 my-1">
+              <div class="card">
+                <div class="img-thumbnail">
+                  {{cupcake.flavor}} flavor
+                </div>
+                <img src="{{cupcake.image}}" class="card-img-top" alt="{{cupcake.flavor}} cupcake">
+                <div class="card-body">
+                  <div class="card-text">
+                    <p> Size: {{cupcake.size}}</p>
+                    <p> Rating: {{cupcake.rating}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          {% endfor %}
+        </div>
+    </div>
+
+    
+    </main> 
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/cupcakes.js"></script>
+</body>
+
+</html>
